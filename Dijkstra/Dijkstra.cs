@@ -16,7 +16,7 @@ namespace Dijkstra
             this.graph = graph;
         }
 
-        void InitData()
+        void InitData() // Инициализация информации
         {
             data = new List<GraphPointInfo>();
             foreach (var p in graph.Points)
@@ -25,7 +25,7 @@ namespace Dijkstra
             }
         }
 
-        GraphPointInfo GetPointData(GraphPoint point)
+        GraphPointInfo GetPointData(GraphPoint point) // Получение информации о вершине графа
         {
             foreach (var i in data)
             {
@@ -38,7 +38,8 @@ namespace Dijkstra
             return null;
         }
 
-        public GraphPointInfo FindUnvisitedPointWithMinSum()
+        // Поиск непосещенной вершины с минимальным значением суммы
+        public GraphPointInfo FindUnvisitedPointWithMinSum() 
         {
             var minValue = int.MaxValue;
             GraphPointInfo minPointInfo = null;
@@ -54,11 +55,13 @@ namespace Dijkstra
             return minPointInfo;
         }
 
-        public string FindShortestPath(int startValue, int finishValue)
+        // Поиск кратчайшего пути по значениям вершин
+        public string FindShortestPath(int startValue, int finishValue) 
         {
             return FindShortestPath(graph.FindPoint(startValue), graph.FindPoint(finishValue));
         }
 
+        // Поиск кратчайшего пути по вершинам
         public string FindShortestPath(GraphPoint startPoint, GraphPoint finishPoint)
         {
             InitData();
@@ -78,6 +81,7 @@ namespace Dijkstra
             return GetPath(startPoint, finishPoint);
         }
 
+        // Вычисление суммы весов ребер для следующей вершины
         void SetSumToNextPoint(GraphPointInfo info)
         {
             info.IsUnvisited = false;
@@ -93,6 +97,7 @@ namespace Dijkstra
             }
         }
 
+        // Текстовое представление пути
         string GetPath(GraphPoint startPoint, GraphPoint endPoint)
         {
             var path = endPoint.ToString();
