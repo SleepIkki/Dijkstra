@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Dijkstra.Graph;
+using Dijkstra.GraphPatterns;
 
 namespace Dijkstra
 {

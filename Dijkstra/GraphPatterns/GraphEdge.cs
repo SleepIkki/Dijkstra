@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dijkstra.Graph
+namespace Dijkstra.GraphPatterns
 {
     class GraphEdge
     {
