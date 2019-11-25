@@ -22,6 +22,6 @@ namespace Dijkstra.GraphPatterns
             AddEdge(new GraphEdge(point, edgeWeight));
         }
 
-        public override string ToString() => Value.ToString();
+        public override string ToString() => Value.ToString() + "->";
     }
 }
